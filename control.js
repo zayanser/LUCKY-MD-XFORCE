@@ -52,7 +52,7 @@ const prefixe = conf.PREFIXE;
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
 const BaseUrl = process.env.GITHUB_GIT;
-const adamsapikey = process.env.BOT_OWNER;
+const Ezraapikey = process.env.BOT_OWNER;
 
 async function authentification() {
     try {
@@ -83,7 +83,7 @@ authentification();
         const sockOptions = {
             version,
             logger: pino({ level: "silent" }),
-            browser: ['Marvel-25', "safari", "1.0.0"],
+            browser: ['Lucky-Md-Xforce', "safari", "1.0.0"],
             printQRInTerminal: true,
             fireInitQueries: false,
             shouldSyncHistoryMessage: true,
