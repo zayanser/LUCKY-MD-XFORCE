@@ -122,22 +122,18 @@ let menuMsg = `
 
  `;
 
-       try {
-        const senderName = nomAuteurMessage || message.from;  // Use correct variable for sender name
-           // Send the message with contextInfo
+        // Use correct variable for sender name
         await zk.sendMessage(dest, {
             text: infoMsg + menuMsg,
             contextInfo: {
-                mentionedJid: [sender, randomParticipant], // Mention both users
-                forwardingScore: 999,
+                forwardingScore: 5,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363313124070136@newsletter',
-                    newsletterName: 'frediezra',
-                    serverMessageId: 143,
-                },
-            },
-        });
+                    newsletterName: "frediezra",
+                    newsletterJid: "120363313124070136@newsletter",
+                }
+              }
+         )}, 
         
         
         
