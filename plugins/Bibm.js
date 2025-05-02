@@ -123,17 +123,30 @@ let menuMsg = `
  `;
 
         // Use correct variable for sender name
-        await zk.sendMessage(dest, {
-            text: infoMsg + menuMsg,
-            contextInfo: {
-                forwardingScore: 5,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterName: "frediezra",
-                    newsletterJid: "120363313124070136@newsletter",
-                }
-              }
-         )}, 
+        try {
+  await sock.sendMessage(chatId, {
+    image: {
+      url: "https://files.catbox.moe/7irwqn.jpeg"
+    },
+    caption: captionHeader + captionBody,
+    contextInfo: {
+      isForwarded: true,
+      forwardedNewsletterMessageInfo: {
+        newsletterJid: "120363313124070136@newsletter",
+        newsletterName: "FrediEzra",
+        serverMessageId: 143 // 0x8f in decimal
+      },
+      forwardingScore: 999, // 0x3e7 in decimal
+      externalAdReply: {
+        title: "☢️LUCKY MD X-FORCE☢️",
+        body: "📃 Bible Command List",
+        thumbnailUrl: "https://files.catbox.moe/7irwqn.jpeg",
+        mediaType: 1, // image
+        mediaUrl: '',
+        sourceUrl: ''
+      }
+    }
+  });
         
         
         
