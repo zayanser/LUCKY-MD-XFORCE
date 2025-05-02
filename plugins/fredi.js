@@ -8,7 +8,7 @@ const s = require(__dirname + "/../set");
 const more = String.fromCharCode(8206);
 const readmore = more.repeat(4001);
 
-zokou({ nomCom: "menu", categorie: "Menu" }, async (dest, zk, commandeOptions) => {
+ezra({ nomCom: "menu", categorie: "Menu" }, async (dest, zk, commandeOptions) => {
     let { ms, repondre, prefixe, nomAuteurMessage, mybotpic } = commandeOptions;
     let { cm } = require(__dirname + "/../fredi/ezra");
     let coms = {};
@@ -66,30 +66,30 @@ zokou({ nomCom: "menu", categorie: "Menu" }, async (dest, zk, commandeOptions) =
         
         // Send message with an image
       try {
-    await _0x4e9b73.sendMessage(_0x357aab, {
+    await zk.sendMessage(desk, {
       'image': {
         'url': "https://files.catbox.moe/mair0k.jpg"
       },
-      'caption': _0x970c0d + _0x628f4d,
+      'caption': infoMsg + menuMsg,
       'contextInfo': {
         'isForwarded': true,
         'forwardedNewsletterMessageInfo': {
           'newsletterJid': "120363313124070136@newsletter",
           'newsletterName': "FrediEzra",
-          'serverMessageId': 0x8f
+          'serverMessageId': -1
         },
-        'forwardingScore': 0x3e7,
+        'forwardingScore': 999,
         'externalAdReply': {
           'title': "☢️LUCKY MD X-FORCE☢️",
           'body': "📃Command List",
           'thumbnailUrl': "https://files.catbox.moe/bw9rme.jpg",
-          'mediaType': 0x1,
+          'mediaType': 1,
           'mediaUrl': '',
           'sourceUrl': ''
         }
       }
     });
-    await _0x4e9b73.sendMessage(_0x357aab, {
+    await zk.sendMessage(desk, {
       'audio': {
         'url': "https://files.catbox.moe/vvlm4i.mp3"
       },
