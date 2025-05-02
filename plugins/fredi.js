@@ -65,8 +65,10 @@ zokou({ nomCom: "menu", categorie: "Menu" }, async (dest, zk, commandeOptions) =
 > Made By ғʀᴇᴅɪᴇ ᴛᴇᴄʜ\n`;
         
         // Send message with an image
+    try {
+        const senderName = nomAuteurMessage || message.from; 
         await zk.sendMessage(
-            from,
+            desk,
             {
                 image: { url: 'https://files.catbox.moe/2ia6od.jpeg' }, // Image URL
                 caption: envSettings,
@@ -81,11 +83,10 @@ zokou({ nomCom: "menu", categorie: "Menu" }, async (dest, zk, commandeOptions) =
                     }
                 }
             },
-            { quoted: mek }
-        );
+    );
 
         // Send an audio file
-        await conn.sendMessage(from, {
+        await zk.sendMessage(desk, {
             audio: { url: 'https://github.com/Fred1e/fredi/raw/refs/heads/main/autovoice/menu.mp3' }, // Audio URL
             mimetype: 'audio/mp4',
             ptt: true
