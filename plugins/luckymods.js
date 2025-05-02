@@ -36,16 +36,29 @@ ezra({ nomCom: "join", categorie: "Mods" }, async (dest, zk, commandeOptions) =>
   });
 });
 
-ezra({ nomCom: "jid", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
-  const { arg, repondre, superUser, auteurMessage, msgRepondu } = commandeOptions;
+ezra({
+  'nomCom': "jid",           
+  'categorie': 'Mods'       
+}, async (dest, zk, commandeOptions) => {
+  const {
+    arg, ms, repondre, verifGroupe, msgRepondu, verifAdmin, superUser, auteurMessage, auteurMsgRepondu     
+  } = commandeOptions;
 
   if (!superUser) {
-    repondre("Command reserved for the bot owner");
+    repondre("command reserved for the bot owner");
     return;
   }
-
-  let jid = msgRepondu ? auteurMsgRepondu : dest;
-  zk.sendMessage(dest, { text: jid }, { quoted: ms });
+  let jid;
+  if (!msgRepondu) {
+    jid = desk;  
+  } else {
+    jid = auteurMsgRepondu;  
+  }
+  zk.sendMessage(desk, {
+    text: jid
+  }, {
+    quoted: ms
+  });
 });
 
 ezra({ nomCom: "block", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
