@@ -65,35 +65,48 @@ zokou({ nomCom: "menu", categorie: "Menu" }, async (dest, zk, commandeOptions) =
 > Made By ғʀᴇᴅɪᴇ ᴛᴇᴄʜ\n`;
         
         // Send message with an image
-    try {
-        const senderName = nomAuteurMessage || message.from; 
-        await zk.sendMessage(
-            desk,
-            {
-                image: { url: 'https://files.catbox.moe/2ia6od.jpeg' }, // Image URL
-                caption: envSettings,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363313124070136@newsletter',
-                        newsletterName: "frediEzra",
-                        serverMessageId: 143
-                    }
-                }
-            },
-    );
-
-        // Send an audio file
-        await zk.sendMessage(desk, {
-            audio: { url: 'https://github.com/Fred1e/fredi/raw/refs/heads/main/autovoice/menu.mp3' }, // Audio URL
-            mimetype: 'audio/mp4',
-            ptt: true
-        }, { quoted: mek });
-   
-     } catch (error) {
-        console.error("Menu error: ", error);
-        repondre("🥵🥵 Menu error: " + error);
-    }
+      try {
+    await _0x4e9b73.sendMessage(_0x357aab, {
+      'image': {
+        'url': "https://files.catbox.moe/mair0k.jpg"
+      },
+      'caption': _0x970c0d + _0x628f4d,
+      'contextInfo': {
+        'isForwarded': true,
+        'forwardedNewsletterMessageInfo': {
+          'newsletterJid': "120363313124070136@newsletter",
+          'newsletterName': "FrediEzra",
+          'serverMessageId': 0x8f
+        },
+        'forwardingScore': 0x3e7,
+        'externalAdReply': {
+          'title': "☢️LUCKY MD X-FORCE☢️",
+          'body': "📃Command List",
+          'thumbnailUrl': "https://files.catbox.moe/bw9rme.jpg",
+          'mediaType': 0x1,
+          'mediaUrl': '',
+          'sourceUrl': ''
+        }
+      }
+    });
+    await _0x4e9b73.sendMessage(_0x357aab, {
+      'audio': {
+        'url': "https://files.catbox.moe/vvlm4i.mp3"
+      },
+      'mimetype': "audio/mp4",
+      'ptt': true,
+      'caption': "LUCKY MD X-FORCE SONG",
+      'contextInfo': {
+        'isForwarded': true,
+        'forwardedNewsletterMessageInfo': {
+          'newsletterJid': "120363313124070136@newsletter",
+          'newsletterName': "FrediEzra",
+          'serverMessageId': -1
+        }
+      }
+    });
+  } catch (_0x56e837) {
+    console.log("Error fetching data:", error);
+    _0x53ed08("❌ Error fetching repository data. Please try again later.");
+  }
 });
