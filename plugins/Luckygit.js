@@ -1,3 +1,4 @@
+"use strict";
 const axios = require("axios");
 const { ezra } = require(__dirname + "/../fredi/ezra");
 const { format } = require(__dirname + "/../fredi/mesfonctions");
@@ -39,7 +40,7 @@ const fetchGitHubStats = async () => {
 ezra({
     nomCom: "repo",
     aliases: ["script", "sc"],
-    reaction: '💔',
+    reaction: '☢️',
     nomFichier: __filename
 }, async (command, reply, context) => {
     const { repondre, auteurMessage, nomAuteurMessage } = context;
@@ -72,27 +73,27 @@ ezra({
     *┋* 👤  *Owner:*   *${conf.OWNER_NAME}*
     * ╰━⊷*`;
 
-    try {
-        await zk.sendMessage(dest, { 
-            image: { url: conf.URL2 },
-            caption: infoMsg + menuMsg,
+    await zk.sendMessage(dest, { 
+            image: { url: conf.URL },
+           caption: gitdata,
             contextInfo: {
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: "120363313124070136@newsletter",
-                    newsletterName: "@FrediEzra",
-                    serverMessageId: -1
-                },
-                forwardingScore: 999,
+            isForwarded: true,
+             forwardedNewsletterMessageInfo: {
+              newsletterJid: '120363313124070136@newsletter',
+              newsletterName: "@FrediEzra",
+              serverMessageId: 143,
+              },
+              forwardingScore: 999, // Score to indicate it has been forwarded
                 externalAdReply: {
-                    title: "☢️LUCKY MD X-FORCE☢️",
-                    body: "🧃Command List",
-                    thumbnailUrl: conf.URL,
-                    sourceUrl: "https://whatsapp.com/channel/0029VaihcQv84Om8LP59fO3f",
+                    title: "☢️LUCKY-MD-XFORCE☢️",
+                    body: "👁️repository",
+                    thumbnailUrl: conf.URL2,
                     mediaType: 1,
-                    renderLargerThumbnail: true
+                    mediaUrl: "",
+                    sourceUrl: ""
                 }
             }
+
         });
     } catch (error) {
         console.error("Error fetching repository data:", error);
