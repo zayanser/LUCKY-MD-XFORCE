@@ -59,6 +59,8 @@ ezra({
             };
 
             const releaseDate = new Date(repoData.created_at).toLocaleDateString('en-GB');
+            const img = conf.URL;
+            const imgs = conf.URL2;
             const message = `
             *Hello 👋 my friend ${nomAuteurMessage}*
 
@@ -73,27 +75,27 @@ ezra({
     *┋* 👤  *Owner:*   *${conf.OWNER_NAME}*
     * ╰━⊷*`;
 
-    await zk.sendMessage(dest, { 
-            image: { url: conf.URL },
-           caption: gitdata,
+        try {
+        await zk.sendMessage(dest, { 
+            image: { url: img },
+            caption: message,
             contextInfo: {
-            isForwarded: true,
-             forwardedNewsletterMessageInfo: {
-              newsletterJid: '120363313124070136@newsletter',
-              newsletterName: "@FrediEzra",
-              serverMessageId: 143,
-              },
-              forwardingScore: 999, // Score to indicate it has been forwarded
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: "120363313124070136@newsletter",
+                    newsletterName: "@FrediEzra",
+                    serverMessageId: -1
+                },
+                forwardingScore: 999,
                 externalAdReply: {
-                    title: "☢️LUCKY-MD-XFORCE☢️",
+                    title: "☢️LUCKY MD X-FORCE☢️",
                     body: "👁️repository",
-                    thumbnailUrl: conf.URL2,
+                    thumbnailUrl: imgs,
+                    sourceUrl: "https://whatsapp.com/channel/0029VaihcQv84Om8LP59fO3f",
                     mediaType: 1,
-                    mediaUrl: "",
-                    sourceUrl: ""
+                    renderLargerThumbnail: true
                 }
             }
-
         });
     } catch (error) {
         console.error("Error fetching repository data:", error);
