@@ -124,11 +124,11 @@ let menuMsg = `
 
         // Use correct variable for sender name
         try {
-  await sock.sendMessage(chatId, {
+  await zk.sendMessage(desk, {
     image: {
       url: "https://files.catbox.moe/7irwqn.jpeg"
     },
-    caption: captionHeader + captionBody,
+    caption: infoMsg + menuMsg,
     contextInfo: {
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
@@ -146,9 +146,7 @@ let menuMsg = `
         sourceUrl: ''
       }
     }
-  });
-        
-        
+  });   
         
     } catch (error) {
         console.error("Menu error: ", error);
