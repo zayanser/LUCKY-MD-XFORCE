@@ -10,7 +10,7 @@ RUN apt-get update && \
   npm i pm2 -g && \
   rm -rf /var/lib/apt/lists/*
   
-RUN git clone https://github.com/Fred1e/LUCKY_MD /root/lucky_bot
+RUN git clone https://github.com/mr-X-force/LUCKY-MD-XFORCE /root/lucky_bot
 WORKDIR /root/lucky_Bot/
 
 
