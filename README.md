@@ -43,7 +43,7 @@ href="https://github.com/mr-X-ferce/LUCKY-MD-XFORCE/graphs/commit-activity"><img
   </a></br>
 
 
-## _☢️DEPLOY NOW YOUR NEW LUCKY MD XFORCE BOT IN YOUR LIKELY HOST CLOUD_
+## _DEPLOY NOW YOUR NEW LUCKY MD XFORCE BOT IN YOUR LIKELY HOST CLOUD_
 
 <div align="center">
   <table>
@@ -71,7 +71,7 @@ JOIN MY GITHUBS ACCOUNTS BY FOLLOW TO GET MORE SCIPTS AND PROJECTS
 
 ---
 
-[![Lucky Md Xforce Git](https://readme-typing-svg.demolab.com?font=Anton&size=25&pause=998&color=F51FFF&background=F7F2F20A&vCenter=true&random=false&width=340&lines=Have+a%F0%9F%91%8B!+All+Errors+in+main+is+fixed+in+here;updates+are+always+done+by+Fredie;Thanks+for+all+your+support 🔏🤞)]
+[![Lucky Md Xforce Git](https://readme-typing-svg.demolab.com?font=Anton&size=25&pause=998&color=F51FFF&background=F7F2F20A&vCenter=true&random=false&width=340&lines=Have+a%F0%9F%91%8B!+All+Errors+in+main+is+fixed+in+here;updates+are+always+done+by+Fredie;Thanks+for+all+your+support🔏🤞)]
 
   
 
