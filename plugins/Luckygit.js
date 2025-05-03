@@ -59,8 +59,7 @@ ezra({
             };
 
             const releaseDate = new Date(repoData.created_at).toLocaleDateString('en-GB');
-            const img = conf.URL;
-            const imgs = conf.URL2;
+            
             const message = `
             *Hello 👋 my friend ${nomAuteurMessage}*
 
@@ -73,11 +72,11 @@ ezra({
     *┋* 📆  *Release date:* - ${releaseDate}
     *┋* 🖇️  *Repo:* - ${repoData.html_url}
     *┋* 👤  *Owner:*   *${conf.OWNER_NAME}*
-    * ╰━⊷*`;
+    *╰━⊷*`;
 
         try {
         await zk.sendMessage(dest, { 
-            image: { url: img },
+            image: { url: "https://files.catbox.moe/uw4l17.jpeg" },
             caption: message,
             contextInfo: {
                 isForwarded: true,
@@ -89,16 +88,16 @@ ezra({
                 forwardingScore: 999,
                 externalAdReply: {
                     title: "☢️LUCKY MD X-FORCE☢️",
-                    body: "👁️repository",
-                    thumbnailUrl: imgs,
+                    body: "🧃Command List",
+                    thumbnailUrl: "https://files.catbox.moe/3o37c5.jpeg",
                     sourceUrl: "https://whatsapp.com/channel/0029VaihcQv84Om8LP59fO3f",
                     mediaType: 1,
                     renderLargerThumbnail: true
                 }
             }
         });
-    } catch (error) {
-        console.error("Error fetching repository data:", error);
-        repondre("An error occurred while fetching the repository data.");
+      } catch (error) {
+        console.error("Repo error: ", error);
+        repondre("🥵🥵 Repo error: " + error);
     }
 });
