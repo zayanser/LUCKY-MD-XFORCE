@@ -71,7 +71,6 @@ ezra({
      ┋  *Owner:*   *${conf.OWNER_NAME}*
      ╰┈┈┈┈┈┈`;
 
-                try {
         await zk.sendMessage(dest, { 
             image: { url: "https://files.catbox.moe/uw4l17.jpeg" },
             caption: message,
