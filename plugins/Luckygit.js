@@ -1,4 +1,3 @@
-"use strict";
 const axios = require("axios");
 const { ezra } = require(__dirname + "/../fredi/ezra");
 const { format } = require(__dirname + "/../fredi/mesfonctions");
@@ -39,14 +38,14 @@ const fetchGitHubStats = async () => {
 
 ezra({
     nomCom: "repo",
-    aliases: ["script", "sc"],
+    aliases: ["script", "cs"],
     reaction: '☢️',
     nomFichier: __filename
 }, async (command, reply, context) => {
     const { repondre, auteurMessage, nomAuteurMessage } = context;
 
     try {
-        const response = await axios.get("https://api.github.com/repos/mr-X-force/LUCKY-MD-XFORCE");
+        const response = await axios.get("https://api.github.com/repos/mr-X-force/LUCKY-MD-XBOT");
         const repoData = response.data;
 
         if (repoData) {
@@ -59,22 +58,20 @@ ezra({
             };
 
             const releaseDate = new Date(repoData.created_at).toLocaleDateString('en-GB');
-            
             const message = `
             *Hello 👋 my friend ${nomAuteurMessage}*
 
             *This is ${conf.BOT}*
             the best bot in the universe developed by ${conf.OWNER_NAME}. Fork and give a star 🌟 to my repo!
-     
-    *╭━⊷*
-    *┋* 🌟  *Stars:* - ${repoInfo.stars}
-    *┋* 🍴  *Forks:* - ${repoInfo.forks}
-    *┋* 📆  *Release date:* - ${releaseDate}
-    *┋* 🖇️  *Repo:* - ${repoData.html_url}
-    *┋* 👤  *Owner:*   *${conf.OWNER_NAME}*
-    *╰━⊷*`;
+     ╭┈┈┈┈┈┈
+     ┋  *Stars:* - ${repoInfo.stars}
+     ┋  *Forks:* - ${repoInfo.forks}
+     ┋  *Release date:* - ${releaseDate}
+     ┋  *Repo:* - ${repoData.html_url}
+     ┋  *Owner:*   *${conf.OWNER_NAME}*
+     ╰┈┈┈┈┈┈`;
 
-        try {
+                try {
         await zk.sendMessage(dest, { 
             image: { url: "https://files.catbox.moe/uw4l17.jpeg" },
             caption: message,
@@ -88,7 +85,7 @@ ezra({
                 forwardingScore: 999,
                 externalAdReply: {
                     title: "☢️LUCKY MD X-FORCE☢️",
-                    body: "🧃Command List",
+                    body: "🗡️Repo Info List",
                     thumbnailUrl: "https://files.catbox.moe/3o37c5.jpeg",
                     sourceUrl: "https://whatsapp.com/channel/0029VaihcQv84Om8LP59fO3f",
                     mediaType: 1,
@@ -96,8 +93,12 @@ ezra({
                 }
             }
         });
-      } catch (error) {
-        console.error("Repo error: ", error);
-        repondre("🥵🥵 Repo error: " + error);
+        } else {
+            console.log("Could not fetch data");
+            repondre("An error occurred while fetching the repository data.");
+        }
+    } catch (error) {
+        console.error("Error fetching repository data:", error);
+        repondre("An error occurred while fetching the repository data.");
     }
 });
