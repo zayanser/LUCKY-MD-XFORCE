@@ -32,6 +32,8 @@ ezra({ nomCom: "bible-list", categorie: "God-first" }, async (dest, zk, commande
 // Créer une date et une heure en GMT
 const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
+const img = 'https://files.catbox.moe/5x1y2z.png';
+const imgs = 'https://files.catbox.moe/5x1y2z.png';
 
 let infoMsg =  `
 
@@ -123,32 +125,29 @@ let menuMsg = `
  `;
 
         // Use correct variable for sender name
-        try {
-  await zk.sendMessage(desk, {
-    image: {
-      url: "https://files.catbox.moe/7irwqn.jpeg"
-    },
-    caption: infoMsg + menuMsg,
-    contextInfo: {
-      isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: "120363313124070136@newsletter",
-        newsletterName: "FrediEzra",
-        serverMessageId: 143 // 0x8f in decimal
-      },
-      forwardingScore: 999, // 0x3e7 in decimal
-      externalAdReply: {
-        title: "☢️LUCKY MD X-FORCE☢️",
-        body: "📃 Bible Command List",
-        thumbnailUrl: "https://files.catbox.moe/7irwqn.jpeg",
-        mediaType: 1, // image
-        mediaUrl: '',
-        sourceUrl: ''
-      }
-    }
-  });   
-        
-    } catch (error) {
+    try {
+        await zk.sendMessage(dest, { 
+            image: { url: img },
+            caption: infoMsg + menuMsg,
+            contextInfo: {
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: "120363313124070136@newsletter",
+                    newsletterName: "@FrediEzra",
+                    serverMessageId: -1
+                },
+                forwardingScore: 999,
+                externalAdReply: {
+                    title: "☢️LUCKY MD X-FORCE☢️",
+                    body: "🧃Command List",
+                    thumbnailUrl: imgs,
+                    sourceUrl: "https://whatsapp.com/channel/0029VaihcQv84Om8LP59fO3f",
+                    mediaType: 1,
+                    renderLargerThumbnail: true
+                }
+            }
+        });
+      } catch (error) {
         console.error("Menu error: ", error);
         repondre("🥵🥵 Menu error: " + error);
     }
