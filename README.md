@@ -48,7 +48,7 @@ href="https://github.com/mr-X-ferce/LUCKY-MD-XFORCE/graphs/commit-activity"><img
 <div align="center">
   <table>
     <tr>
-      <td><a href="https://lucky-md-xforce-deploy-your-bot-with-your-github-username.vercel.app" target="_blank"><img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white&labelColor=000000&color=0000FF"/></a></td>
+      <td><a href="https://lucky-md-xforce-deploy-your-bot-with-your-github-username.vercel.app" target="_blank"><img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white&labelColor=000000&color=00ffaa"/></a></td>
       <td><a href="https://host.talkdrove.com/share-bot/47" target="_blank"><img src="https://img.shields.io/badge/TalkDrove-A52A2A?style=for-the-badge&logo=github&logoColor=white&labelColor=000000"/></a></td>
     </tr>
     <tr>
