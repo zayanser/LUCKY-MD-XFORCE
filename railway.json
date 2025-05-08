@@ -1,7 +1,7 @@
 {
   "name": "𝗭𝗔𝗬𝗔𝗡𝗦𝗘𝗥",
   "description": "For deploying ☢️ LUCKY-MD-⁠XFORCE☢️.",
-  "repository": "https://github.com/mr-X-force/LUCKY-MD-XFORCE",
+  "repository": "https://github.com/Zedkazzozoranda091",
   "build": {
     "commands": {
       "install": "yarn install",
